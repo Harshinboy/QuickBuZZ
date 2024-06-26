@@ -15,7 +15,7 @@ The **QuickBuzz** blog project is a web application designed for publishing and 
 
 ## Technologies Used
 
-- **Frontend**: HTML, CSS, JavaScript (or a framework like React or Angular)
+- **Frontend**: HTML, CSS, JavaScript,React
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose
 - **Other Tools**: Git for version control, Postman for API testing
