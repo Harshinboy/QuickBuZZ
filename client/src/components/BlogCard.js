@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { Box, IconButton } from "@mui/material";
+import { Box, IconButton, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -38,10 +38,11 @@ export default function BlogCard({
       console.log(error);
     }
   };
+
   return (
     <Card
       sx={{
-        width: "40%",
+        width: "60%",
         margin: "auto",
         mt: 2,
         padding: 2,
@@ -61,24 +62,37 @@ export default function BlogCard({
           </IconButton>
         </Box>
       )}
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {username}
-          </Avatar>
-        }
-        title={username}
-        subheader={time}
-      />
-      <CardMedia component="img" height="194" image={image} alt="Paella dish" />
-      <CardContent>
-        <Typography variant="h6" color="text.secondary">
-          Title : {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Description : {description}
-        </Typography>
-      </CardContent>
+      <Grid container spacing={2}>
+        <Grid item xs={8}>
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                {username}
+              </Avatar>
+            }
+            title={username}
+            subheader={time}
+          />
+          <CardContent>
+            <Typography variant="h6" color="text.secondary">
+              Title : {title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Description : {description}
+            </Typography>
+          </CardContent>
+        </Grid>
+        <Grid item xs={4}>
+          <CardMedia
+            component="img"
+            height="100%"
+            image={image}
+            alt="Blog Image"
+            sx={{ objectFit: "cover" }}
+          />
+        </Grid>
+      </Grid>
     </Card>
   );
 }
+
