@@ -24,22 +24,28 @@ const UserBlogs = () => {
   return (
     <div>
       {blogs && blogs.length > 0 ? (
-        blogs.map((blog) => (
-          <BlogCard
-            id={blog._id}
-            isUser={true}
-            title={blog.title}
-            description={blog.description}
-            image={blog.image}
-            username={blog.user.username}
-            time={blog.createdAt}
-          />
-        ))
+        blogs.map((blog) => {
+          const createdAt = new Date(blog.createdAt);
+          const dateOnly = createdAt.toISOString().split('T')[0];
+          return (
+            <BlogCard
+              key={blog._id} // add a unique key prop when rendering lists
+              id={blog._id}
+              isUser={true}
+              title={blog.title}
+              description={blog.description}
+              image={blog.image}
+              username={blog.user.username}
+              time={dateOnly} // use dateOnly if you want to show only the date
+            />
+          );
+        })
       ) : (
-        <h1>You Havent Created a blog</h1>
+        <h1>You Have No Posts - Create a BuZZ</h1>
       )}
     </div>
   );
+  
 };
 
 export default UserBlogs;

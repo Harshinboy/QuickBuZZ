@@ -54,6 +54,19 @@ const BlogDetails = () => {
       console.log(error);
     }
   };
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter' && event.shiftKey) {
+      event.preventDefault();
+      const { selectionStart, selectionEnd, value } = event.target;
+      const newValue = value.substring(0, selectionStart) + '\n' + value.substring(selectionEnd);
+      handleChange({
+        target: {
+          name: event.target.name,
+          value: newValue,
+        },
+      });
+    }
+  };
   console.log(blog);
   return (
     <v>
@@ -76,7 +89,7 @@ const BlogDetails = () => {
             padding={3}
             color="gray"
           >
-            Update A Pots
+            Update BUZZ
           </Typography>
           <InputLabel
             sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
@@ -97,12 +110,16 @@ const BlogDetails = () => {
             Description
           </InputLabel>
           <TextField
-            name="description"
-            value={inputs.description}
-            onChange={handleChange}
-            margin="normal"
-            variant="outlined"
-            required
+               name="description"
+               value={inputs.description}
+               onChange={handleChange}
+               onKeyDown={handleKeyDown}
+               margin="normal"
+               variant="outlined"
+               required
+               multiline
+               minRows={4} 
+               fullWidth
           />
           <InputLabel
             sx={{ mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" }}
