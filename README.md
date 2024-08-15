@@ -31,8 +31,11 @@ The **QuickBuzz** blog project is a web application designed for publishing and 
 ### Register Page
 ![Register Page](register.png)
 
+### Create Page
+![Create Page](createblog.png) 
+
 ### Update Page
-![Update Page](update.png)
+![Update Page](updateblog.png)
 
 
 
