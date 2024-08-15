@@ -23,7 +23,7 @@ The **QuickBuzz** blog project is a web application designed for publishing and 
 ## Screenshots
 
 ### Home Page
-![Home Page](home.png)
+![Home Page](Home.png)
 
 ### Login Page
 ![Login Page](login.png)
