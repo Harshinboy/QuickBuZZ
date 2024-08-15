@@ -19,5 +19,14 @@ The **QuickBuzz** blog project is a web application designed for publishing and 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose
 - **Other Tools**: Git for version control, Postman for API testing
+- 
+## Screenshots
+
+### Home Page
+![Home Page](home.png)
+
+### Login Page
+![Login Page](login.png)
+
 
 
